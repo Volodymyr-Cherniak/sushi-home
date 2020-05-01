@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 const Item = ({sushi}) => {
-  const {name, img, text, price} = sushi;
+  const {name, img, text, price, weight} = sushi;
 
   return (
     <div className="col mt-lg-3">
@@ -12,7 +12,7 @@ const Item = ({sushi}) => {
         </Link>
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
-          <p className="card-text">{text}</p>
+          <p className="card-text">{text}<p>{weight}</p></p>
         </div>
         <div className="card-footer">
           <div className='row h-100'>
