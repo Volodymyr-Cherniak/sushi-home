@@ -6,7 +6,7 @@ const MenuItems = () => {
 
   return (
     <div>
-      <h1>Смачненькі суші у нас</h1>
+      <h2>Смачненькі суші у нас</h2>
       <div className="card-deck">
         <div className="row row-cols-lg-3 row-cols-sm-2">
           {sushi.map(el => <Item key={el.name}

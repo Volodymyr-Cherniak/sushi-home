@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const Item = ({sushi}) => {
   const {name, img, text, price} = sushi;
@@ -6,9 +7,9 @@ const Item = ({sushi}) => {
   return (
     <div className="col mt-lg-3">
       <div className="card h-100 shadow bg-white rounded">
-        <a href="/item/id" >
+        <Link to="/item/id">
           <img src={img} className="card-img-top" alt="..." />
-        </a>
+        </Link>
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
           <p className="card-text">{text}</p>
