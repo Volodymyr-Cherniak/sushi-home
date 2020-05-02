@@ -24,7 +24,7 @@ const BasketItems = (props) => {
   if (!props.itemsInBasket[0]) {
     return (
       <div className='mt-3'>
-        <h5>Поки корзина пуста</h5>
+        <h5>Корзина поки пуста</h5>
       </div>
     )
   }
