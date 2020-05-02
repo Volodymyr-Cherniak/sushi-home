@@ -1,11 +1,11 @@
 import React from "react";
 import {Switch, Route, Redirect} from "react-router-dom";
 import Contacts from "./pages/Contacts";
-import Basket from "./pages/Basket";
+import Basket from "./pages/BasketItems";
 import MenuItems from "./pages/MenuItems";
 import ItemPage from "./pages/ItemPage";
 
-const UseRoutes = (props) => {
+const UseRoutes = () => {
   return (
     <Switch>
       <Route path="/sushi-home">
@@ -20,7 +20,7 @@ const UseRoutes = (props) => {
         <Basket/>
       </Route>
 
-      <Route path="/item/id">
+      <Route path="/item/:id">
         <ItemPage/>
       </Route>
 
