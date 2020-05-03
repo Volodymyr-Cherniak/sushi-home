@@ -1,7 +1,7 @@
 export const sushi = [
   {
     id: 1,
-    name: "Smog fish",
+    name: "Smog Fish",
     img: require('./images/20190919_115312_рол з копченим лососем.jpg'),
     price: 111,
     currency: 'грн',
@@ -12,7 +12,7 @@ export const sushi = [
   },
   {
     id: 2,
-    name: "Philadelphia",
+    name: "Philadelphia Green",
     img: require('./images/20190919_115708_філ. з авокадо.jpg'),
     price: 127,
     currency: 'грн',
@@ -34,7 +34,7 @@ export const sushi = [
   },
   {
     id: 4,
-    name: "ButterFish",
+    name: "Butter Fish",
     img: require('./images/20190919_115733_філад. з масялною рибою.jpg'),
     price: 108,
     currency: 'грн',

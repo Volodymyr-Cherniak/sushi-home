@@ -21,7 +21,7 @@ const BasketItem = (props) => {
             <span className=' ml-2 mr-2'><strong>{count}</strong></span>
             <button className='btn btn-outline-secondary mr-auto btn-sm' onClick={() => incrementCount(itemInBasket)}>+</button>
             <span className=' ml-1 mr-1'><strong>{sum}{currency}</strong></span>
-            <button className='btn btn-outline-danger ' onClick={() => deleteItem(itemInBasket)}>delete</button>
+            <button className='btn btn-outline-danger ' onClick={() => deleteItem(itemInBasket)}>Видалити</button>
           </div>
         </div>
       </div>

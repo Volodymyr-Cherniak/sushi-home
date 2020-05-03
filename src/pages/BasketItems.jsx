@@ -41,7 +41,8 @@ const BasketItems = (props) => {
           />
         )
       }
-      <div className='d-flex justify-content-end'>
+      <div className='d-flex justify-content-between'>
+        <button className='btn btn-outline-warning'>Очистити корзину</button>
         <button className='btn btn-outline-success'>Оформити Замовлення на {sumAllItems}грн</button>
       </div>
     </div>
