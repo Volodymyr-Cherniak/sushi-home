@@ -4,7 +4,7 @@ import {sushi} from "../constans";
 const initialState = {
   sushiItems: [...sushi],
   currentItem: {},
-  inBasket: []
+  inCart: []
 };
 
 const sushiItems = (state = initialState, action) => {
@@ -16,25 +16,25 @@ const sushiItems = (state = initialState, action) => {
         currentItem: state.sushiItems.find(el => el.id === action.payload)
       });
 
-    case 'ADD_ITEM_TO_BASKET':
+    case 'ADD_ITEM_TO_CART':
       return ({
         ...state,
-        inBasket: (() => {
-          const exist = state.inBasket.filter(el => el.id === action.payload.id)
+        inCart: (() => {
+          const exist = state.inCart.filter(el => el.id === action.payload.id)
           if (exist.length > 0) {
-            return state.inBasket.map(el => {
+            return state.inCart.map(el => {
               if (el.id === action.payload.id) return {...el, count: el.count + 1, sum: el.sum + action.payload.price}
               return el
             })
           }
-          return [...state.inBasket, {...action.payload, sum: action.payload.price}]
+          return [...state.inCart, {...action.payload, sum: action.payload.price}]
         })()
       });
 
     case 'INCREMENT_COUNT':
       return {
         ...state,
-        inBasket: state.inBasket.map(el => {
+        inCart: state.inCart.map(el => {
           if (el.id === action.payload.id) return {...el, count: el.count + 1, sum: el.sum + action.payload.price}
           return el
         })
@@ -43,17 +43,23 @@ const sushiItems = (state = initialState, action) => {
     case 'DECREMENT_COUNT':
       return {
         ...state,
-        inBasket: state.inBasket.map(el => {
+        inCart: state.inCart.map(el => {
           if (el.id === action.payload.id) {
             if (el.count > 1) return {...el, count: el.count - 1, sum: el.sum - action.payload.price}
           }
           return el
         })
       }
-    case 'DELETE_ITEM_IN_BASKET':
+    case 'DELETE_ITEM_IN_CART':
       return {
         ...state,
-        inBasket: state.inBasket.filter(el => el.id !== action.payload.id)
+        inCart: state.inCart.filter(el => el.id !== action.payload.id)
+      }
+
+    case 'CLEAR_ITEMS_IN_CART':
+      return {
+        ...state,
+        inCart: [],
       }
 
 

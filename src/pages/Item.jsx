@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const Item = ({sushi, openItemPage, addItemInBasket}) => {
+const Item = ({sushi, openItemPage, addItemInCart}) => {
   const {name, img, text, price, weight, id, currency} = sushi;
 
   return (
@@ -22,7 +22,7 @@ const Item = ({sushi, openItemPage, addItemInBasket}) => {
               <h5>{price}{currency}</h5>
             </div>
             <div className='col-auto'>
-              <button className='btn btn-success' onClick={()=>addItemInBasket(sushi)}>В корзину</button>
+              <button className='btn btn-success' onClick={()=>addItemInCart(sushi)}>В корзину</button>
             </div>
           </div>
         </div>

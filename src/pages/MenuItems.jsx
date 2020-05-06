@@ -1,7 +1,7 @@
 import React from "react";
 import Item from "./Item";
 import {connect} from "react-redux";
-import {addToBasket, pageItemById} from "../redux/actions";
+import {addToCart, pageItemById} from "../redux/actions";
 
 
 const MenuItems = (props) => {
@@ -13,8 +13,8 @@ const MenuItems = (props) => {
     console.log('id', id)
   }
 
-  const addItemInBasket = (args) => {
-    props.addToBasket(args);
+  const addItemInCart = (args) => {
+    props.addToCart(args);
     console.log('args', args);
   }
 
@@ -26,7 +26,7 @@ const MenuItems = (props) => {
           {props.sushiItems.map(el => <Item key={el.id}
                                             sushi={el}
                                             openItemPage={openItemPage}
-                                            addItemInBasket={addItemInBasket}
+                                            addItemInCart={addItemInCart}
           />)}
         </div>
       </div>
@@ -40,7 +40,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   pageItemById: (id) => dispatch(pageItemById(id)),
-  addToBasket: (args) => dispatch(addToBasket(args)),
+  addToCart: (args) => dispatch(addToCart(args)),
 });
 
 

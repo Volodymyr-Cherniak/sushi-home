@@ -1,7 +1,7 @@
 import React from "react";
 import {Switch, Route, Redirect} from "react-router-dom";
 import Contacts from "./pages/Contacts";
-import Basket from "./pages/BasketItems";
+import Cart from "./pages/CartItems";
 import MenuItems from "./pages/MenuItems";
 import ItemPage from "./pages/ItemPage";
 
@@ -16,8 +16,8 @@ const UseRoutes = () => {
         <Contacts/>
       </Route>
 
-      <Route path="/basket">
-        <Basket/>
+      <Route path="/cart">
+        <Cart/>
       </Route>
 
       <Route path="/item/:id">

@@ -4,8 +4,8 @@ import {connect} from "react-redux";
 
 
 const NavBar = (props) => {
-  const totalItems = props.itemsInBasket.length;
-  const sumAllItems = props.itemsInBasket.reduce((acc, curr) => acc + curr.sum, 0);
+  const totalItems = props.itemsInCart.length;
+  const sumAllItems = props.itemsInCart.reduce((acc, curr) => acc + curr.sum, 0);
 
   return (
     <nav className="navbar navbar-expand navbar-light mainColor rounded-lg p-3 rounded">
@@ -13,8 +13,8 @@ const NavBar = (props) => {
         <Link to="/sushi-home" className="navbar-brand">Sushi-Home</Link>
         <Link to='/sushi-home' className="nav-item nav-link">Суші</Link>
         <Link to="/contacts" className="nav-item nav-link">Контакти</Link>
-        {!totalItems && <Link to='/basket' className="nav-item nav-link">Корзинка</Link>}
-        {totalItems > 0 && <Link to='/basket'
+        {!totalItems && <Link to='/cart' className="nav-item nav-link">Корзинка</Link>}
+        {totalItems > 0 && <Link to='/cart'
                                  type="button"
                                  className="btn btn-outline-success"
         >
@@ -30,7 +30,7 @@ const NavBar = (props) => {
 }
 
 const mapStateToProps = state => ({
-  itemsInBasket: state.inBasket
+  itemsInCart: state.inCart
 })
 
 export default connect(mapStateToProps)(NavBar);

@@ -1,9 +1,9 @@
 import React from "react";
 import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
-import {addToBasket} from "../redux/actions";
+import {addToCart} from "../redux/actions";
 
-const ItemPage = ({currentItem, addToBasket}) => {
+const ItemPage = ({currentItem, addToCart}) => {
   const {name, img, text, price, weight, currency} = currentItem;
   console.log('sushiItem', currentItem)
 
@@ -26,7 +26,7 @@ const ItemPage = ({currentItem, addToBasket}) => {
                   <h5>{price}{currency}</h5>
                 </div>
                 <div className='col-auto'>
-                  <button className='btn btn-success' onClick={()=>addToBasket(currentItem)}>
+                  <button className='btn btn-success' onClick={()=>addToCart(currentItem)}>
                     В корзину
                   </button>
                 </div>
@@ -43,7 +43,7 @@ const mapStateToProps = state => ({
   currentItem: state.currentItem
 })
 const mapDispatchToProps = dispatch => ({
-  addToBasket: (args) => dispatch(addToBasket(args)),
+  addToCart: (args) => dispatch(addToCart(args)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemPage);

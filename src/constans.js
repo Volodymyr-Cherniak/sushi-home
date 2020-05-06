@@ -51,7 +51,6 @@ export const sushi = [
     currency: 'грн',
     text: 'Рис, Норі, Крем-сир, Огірок, Ікра масаго, Лосось свіжий',
     weight: '120г',
-    activeBasket: false,
     count: 1,
   },
   {
