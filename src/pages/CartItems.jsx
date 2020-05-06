@@ -24,8 +24,6 @@ const CartItems = (props) => {
 
   const sumAllItems = props.itemsInCart.reduce((acc, curr) => acc + curr.sum, 0);
 
-  console.log('sumAllItems', sumAllItems)
-
   if (!props.itemsInCart[0]) {
     return (
       <div className='mt-3'>

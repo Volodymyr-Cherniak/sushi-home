@@ -5,7 +5,6 @@ import {addToCart} from "../redux/actions";
 
 const ItemPage = ({currentItem, addToCart}) => {
   const {name, img, text, price, weight, currency} = currentItem;
-  console.log('sushiItem', currentItem)
 
   if (!currentItem.img) return <Redirect to='/sushi-home'/>
 

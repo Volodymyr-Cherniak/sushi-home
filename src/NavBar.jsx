@@ -15,12 +15,9 @@ const NavBar = (props) => {
         <Link to="/contacts" className="nav-item nav-link">Контакти</Link>
         {!totalItems && <Link to='/cart' className="nav-item nav-link">Корзинка</Link>}
         {totalItems > 0 && <Link to='/cart'
-                                 type="button"
-                                 className="btn btn-outline-success"
+                                 className="nav-item nav-link"
         >
-          {totalItems}
-          <i className='fab fa-opencart mr-3 ml-3'/>
-          {sumAllItems + 'грн'}
+          {'Корзина ' + sumAllItems + 'грн'}
         </Link>
         }
       </div>

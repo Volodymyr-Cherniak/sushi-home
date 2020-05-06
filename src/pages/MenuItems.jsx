@@ -6,16 +6,12 @@ import {addToCart, pageItemById} from "../redux/actions";
 
 const MenuItems = (props) => {
 
-  console.log('props', props.sushiItems);
-
   const openItemPage = (id) => {
     props.pageItemById(id)
-    console.log('id', id)
   }
 
   const addItemInCart = (args) => {
     props.addToCart(args);
-    console.log('args', args);
   }
 
   return (

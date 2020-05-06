@@ -4,8 +4,6 @@ const CartItem = (props) => {
   const {itemInCart, decrementCount, incrementCount, deleteItem} = props;
   const {img, name, count, sum, currency} = itemInCart;
 
-  console.log('itemInCart', itemInCart)
-
   return (
     <div className="card mb-3 mt-2">
       <div className="card-body">
