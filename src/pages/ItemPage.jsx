@@ -7,7 +7,7 @@ const ItemPage = ({currentItem, addToBasket}) => {
   const {name, img, text, price, weight, currency} = currentItem;
   console.log('sushiItem', currentItem)
 
-  if (!currentItem.img) return <Redirect to='/sushi'/>
+  if (!currentItem.img) return <Redirect to='/sushi-home'/>
 
   return (
     <div className="card mb-3 mt-3" style={{maxWidth: 'auto'}}>

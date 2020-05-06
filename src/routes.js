@@ -8,7 +8,7 @@ import ItemPage from "./pages/ItemPage";
 const UseRoutes = () => {
   return (
     <Switch>
-      <Route path="/sushi">
+      <Route path="/sushi-home">
         <MenuItems/>
       </Route>
 
@@ -24,7 +24,7 @@ const UseRoutes = () => {
         <ItemPage/>
       </Route>
 
-      <Redirect to='/sushi'/>
+      <Redirect to='/sushi-home'/>
     </Switch>
   );
 }
