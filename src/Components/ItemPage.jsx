@@ -3,10 +3,21 @@ import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
 import {addToCart} from "../redux/actions";
 
-const ItemPage = ({currentItem, addToCart}) => {
-  const {name, img, text, price, weight, currency} = currentItem;
+const ItemPage = ({currentItem, addToCart, inCart}) => {
+  const {name, img, text, price, weight, currency, id} = currentItem;
 
   if (!currentItem.img) return <Redirect to='/sushi-home'/>
+
+  const ItemsInCart = inCart.find(el => el.id === id);
+
+  const isItemsInCart = () => {
+    if(ItemsInCart) {
+      return 'в корзинку ' + ItemsInCart.count
+    }
+    return 'в корзинку'
+  }
+
+  //console.log('currentItem', currentItem);
 
   return (
     <div className="card mb-3 mt-3" style={{maxWidth: 'auto'}}>
@@ -26,7 +37,7 @@ const ItemPage = ({currentItem, addToCart}) => {
                 </div>
                 <div className='col-auto'>
                   <button className='btn btn-success' onClick={()=>addToCart(currentItem)}>
-                    В корзину
+                    {isItemsInCart()}
                   </button>
                 </div>
               </div>
@@ -39,7 +50,8 @@ const ItemPage = ({currentItem, addToCart}) => {
 }
 
 const mapStateToProps = state => ({
-  currentItem: state.currentItem
+  currentItem: state.currentItem,
+  inCart: state.inCart,
 })
 const mapDispatchToProps = dispatch => ({
   addToCart: (args) => dispatch(addToCart(args)),

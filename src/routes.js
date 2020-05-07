@@ -1,9 +1,9 @@
 import React from "react";
 import {Switch, Route, Redirect} from "react-router-dom";
-import Contacts from "./pages/Contacts";
-import Cart from "./pages/CartItems";
-import MenuItems from "./pages/MenuItems";
-import ItemPage from "./pages/ItemPage";
+import Contacts from "./Components/Contacts";
+import Cart from "./Components/CartItems";
+import MenuItems from "./Components/MenuItems";
+import ItemPage from "./Components/ItemPage";
 
 const UseRoutes = () => {
   return (

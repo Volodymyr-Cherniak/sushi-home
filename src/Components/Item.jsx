@@ -2,9 +2,18 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 
-const Item = ({sushi, openItemPage, addItemInCart, itemsInCart}) => {
+const Item = ({currentItem, openItemPage, addItemInCart, inCart}) => {
 
-  const {name, img, text, price, weight, id, currency} = sushi;
+  const {name, img, text, price, weight, id, currency} = currentItem;
+
+  const ItemsInCart = inCart.find(el => el.id === id);
+
+  const isItemsInCart = () => {
+    if(ItemsInCart) {
+      return 'в корзинку ' + ItemsInCart.count
+    }
+    return 'в корзинку'
+  }
 
   return (
     <div className="col mt-lg-3">
@@ -24,8 +33,8 @@ const Item = ({sushi, openItemPage, addItemInCart, itemsInCart}) => {
               <h5>{price}{currency}</h5>
             </div>
             <div className='col-auto'>
-              <button className='btn btn-success' onClick={() => addItemInCart(sushi)}>
-                {'в корзинку'}
+              <button className='btn btn-success' onClick={() => addItemInCart(currentItem)}>
+                {isItemsInCart()}
               </button>
             </div>
           </div>
@@ -37,7 +46,7 @@ const Item = ({sushi, openItemPage, addItemInCart, itemsInCart}) => {
 }
 
 const mapStateToProps = (state) => ({
-  itemsInCart: state.inCart,
+  inCart: state.inCart,
 });
 
 export default connect(mapStateToProps)(Item);

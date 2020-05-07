@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import CartItem from "./CartItem";
-import {clearCart, decrementCount, deleteItem, incrementCount} from "../redux/actions";
+import {clearCart, decrementCount, deleteItem, incrementCount, pageItemById} from "../redux/actions";
 import {Link} from "react-router-dom";
 
 const CartItems = (props) => {
@@ -20,6 +20,10 @@ const CartItems = (props) => {
 
   const clearCart = () => {
     props.clearCart()
+  }
+
+  const openItemPage = (id) => {
+    props.pageItemById(id)
   }
 
   const sumAllItems = props.itemsInCart.reduce((acc, curr) => acc + curr.sum, 0);
@@ -44,6 +48,7 @@ const CartItems = (props) => {
                     incrementCount={incrementCount}
                     decrementCount={decrementCount}
                     deleteItem={deleteItem}
+                    openItemPage={openItemPage}
           />
         )
       }
@@ -63,7 +68,8 @@ const mapDispatchToProps = dispatch => ({
   incrementCount: (args) => dispatch(incrementCount(args)),
   decrementCount: (args) => dispatch(decrementCount(args)),
   deleteItem: (args) => dispatch(deleteItem(args)),
-  clearCart: () => dispatch(clearCart())
+  clearCart: () => dispatch(clearCart()),
+  pageItemById: (id) => dispatch(pageItemById(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartItems);

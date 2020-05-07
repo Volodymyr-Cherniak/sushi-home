@@ -20,7 +20,7 @@ const MenuItems = (props) => {
       <div className="card-deck">
         <div className="row row-cols-lg-3 row-cols-sm-2">
           {props.sushiItems.map(el => <Item key={el.id}
-                                            sushi={el}
+                                            currentItem={el}
                                             openItemPage={openItemPage}
                                             addItemInCart={addItemInCart}
           />)}
