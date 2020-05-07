@@ -12,15 +12,15 @@ const UseRoutes = () => {
         <MenuItems/>
       </Route>
 
-      <Route path="/sushi-home/contacts">
+      <Route path="/contacts">
         <Contacts/>
       </Route>
 
-      <Route path="/sushi-home/cart">
+      <Route path="/cart">
         <Cart/>
       </Route>
 
-      <Route path="/sushi-home/item/:id">
+      <Route path="/item/:id">
         <ItemPage/>
       </Route>
 

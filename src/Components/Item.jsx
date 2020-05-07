@@ -10,9 +10,9 @@ const Item = ({currentItem, openItemPage, addItemInCart, inCart}) => {
 
   const isItemsInCart = () => {
     if(ItemsInCart) {
-      return 'In cart ' + ItemsInCart.count
+      return <button className='btn btn-warning' onClick={() => addItemInCart(currentItem)}>{'In cart ' + ItemsInCart.count}</button>
     }
-    return 'In cart'
+    return <button className='btn btn-success' onClick={() => addItemInCart(currentItem)}>In cart</button>
   }
 
   return (
@@ -28,14 +28,12 @@ const Item = ({currentItem, openItemPage, addItemInCart, inCart}) => {
 
         </div>
         <div className="card-footer">
-          <div className='row h-100'>
+          <div className='row align-items-center'>
             <div className='col'>
               <h5>{price + ' '}{currency}</h5>
             </div>
             <div className='col-auto'>
-              <button className='btn btn-success' onClick={() => addItemInCart(currentItem)}>
                 {isItemsInCart()}
-              </button>
             </div>
           </div>
         </div>
