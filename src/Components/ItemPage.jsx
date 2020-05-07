@@ -12,9 +12,9 @@ const ItemPage = ({currentItem, addToCart, inCart}) => {
 
   const isItemsInCart = () => {
     if(ItemsInCart) {
-      return 'в корзинку ' + ItemsInCart.count
+      return 'In cart ' + ItemsInCart.count
     }
-    return 'в корзинку'
+    return 'In cart'
   }
 
   //console.log('currentItem', currentItem);
@@ -33,7 +33,7 @@ const ItemPage = ({currentItem, addToCart, inCart}) => {
             <div className="card-footer">
               <div className='row h-100'>
                 <div className='col'>
-                  <h5>{price}{currency}</h5>
+                  <h5>{price + ' '}{currency}</h5>
                 </div>
                 <div className='col-auto'>
                   <button className='btn btn-success' onClick={()=>addToCart(currentItem)}>

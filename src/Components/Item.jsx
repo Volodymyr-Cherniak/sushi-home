@@ -10,9 +10,9 @@ const Item = ({currentItem, openItemPage, addItemInCart, inCart}) => {
 
   const isItemsInCart = () => {
     if(ItemsInCart) {
-      return 'в корзинку ' + ItemsInCart.count
+      return 'In cart ' + ItemsInCart.count
     }
-    return 'в корзинку'
+    return 'In cart'
   }
 
   return (
@@ -30,7 +30,7 @@ const Item = ({currentItem, openItemPage, addItemInCart, inCart}) => {
         <div className="card-footer">
           <div className='row h-100'>
             <div className='col'>
-              <h5>{price}{currency}</h5>
+              <h5>{price + ' '}{currency}</h5>
             </div>
             <div className='col-auto'>
               <button className='btn btn-success' onClick={() => addItemInCart(currentItem)}>

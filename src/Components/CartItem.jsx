@@ -31,8 +31,8 @@ const CartItem = (props) => {
                     onClick={() => incrementCount(itemInCart)}>+
             </button>
 
-            <span className=' ml-1 mr-1'><strong>{sum}{currency}</strong></span>
-            <button className='btn btn-outline-danger ' onClick={() => deleteItem(itemInCart)}>Видалити</button>
+            <span className=' ml-1 mr-1'><strong>{sum + ' '}{currency}</strong></span>
+            <button className='btn btn-outline-danger ' onClick={() => deleteItem(itemInCart)}>Delete</button>
           </div>
         </div>
       </div>

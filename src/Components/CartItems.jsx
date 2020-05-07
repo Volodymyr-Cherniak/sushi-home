@@ -31,9 +31,9 @@ const CartItems = (props) => {
   if (!props.itemsInCart[0]) {
     return (
       <div className='mt-3'>
-        <h5>Корзина поки пуста</h5>
+        <h5>Cart is empty</h5>
         <Link to={`/sushi-home`} >
-          <button className='btn btn-outline-warning mt-2'>на головну</button>
+          <button className='btn btn-outline-warning mt-2'>Back home page</button>
         </Link>
       </div>
     )
@@ -53,8 +53,8 @@ const CartItems = (props) => {
         )
       }
       <div className='d-flex justify-content-between'>
-        <button className='btn btn-outline-warning' onClick={clearCart}>Очистити корзину</button>
-        <button className='btn btn-outline-success'>Оформити Замовлення на {sumAllItems}грн</button>
+        <button className='btn btn-outline-warning' onClick={clearCart}>Clear cart</button>
+        <button className='btn btn-outline-success'>make an order for {sumAllItems + ' '}₴</button>
       </div>
     </div>
   );

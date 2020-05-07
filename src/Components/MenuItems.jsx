@@ -16,7 +16,6 @@ const MenuItems = (props) => {
 
   return (
     <div>
-      <h2>Смачненькі суші у нас</h2>
       <div className="card-deck">
         <div className="row row-cols-lg-3 row-cols-sm-2">
           {props.sushiItems.map(el => <Item key={el.id}
