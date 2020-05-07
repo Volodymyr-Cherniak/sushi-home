@@ -17,7 +17,7 @@ const NavBar = (props) => {
         {totalItems > 0 && <Link to='/cart'
                                  className="nav-item nav-link"
         >
-          {'Корзина ' + sumAllItems + 'грн'}
+          {'Корзина '} <strong>{sumAllItems}₴</strong>
         </Link>
         }
       </div>
