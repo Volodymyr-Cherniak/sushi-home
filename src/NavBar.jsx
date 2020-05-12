@@ -10,9 +10,9 @@ const NavBar = (props) => {
   return (
     <nav className="navbar navbar-expand navbar-light mainColor rounded-lg p-3 rounded">
       <div className="navbar-nav sticky-top">
-        <Link to="/sushi-home" className="navbar-brand">Sushi-Home</Link>
+        <Link to="/" className="navbar-brand">Sushi-Home</Link>
 
-        <Link to='/sushi-home' className="nav-item nav-link">Sushi</Link>
+        <Link to='/' className="nav-item nav-link">Sushi</Link>
 
         <Link to="/contacts" className="nav-item nav-link">Contact</Link>
 
