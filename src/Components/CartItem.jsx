@@ -10,7 +10,7 @@ const CartItem = (props) => {
     <div className="card mb-3 mt-2">
       <div className="card-body">
         <div className="row align-items-center">
-          <div className="col">
+          <div className="col col-sm-auto">
             <Link to={`/item/${id}`} onClick={() => openItemPage(id)}>
               <img src={img} alt="" style={{maxHeight: '5rem'}}/>
             </Link>
@@ -20,7 +20,7 @@ const CartItem = (props) => {
             <h5>{name}</h5>
           </div>
 
-          <div className="col text-center">
+          <div className="col text-center col-sm-auto">
             <button className='btn btn-outline-secondary ml-auto btn-sm'
                     onClick={() => decrementCount(itemInCart)}>-
             </button>

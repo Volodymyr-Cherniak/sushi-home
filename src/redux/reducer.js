@@ -4,7 +4,7 @@ import {sushi} from "../constans";
 const initialState = {
   sushiItems: [...sushi],
   currentItem: {},
-  inCart: []
+  inCart: [],
 };
 
 const sushiItems = (state = initialState, action) => {

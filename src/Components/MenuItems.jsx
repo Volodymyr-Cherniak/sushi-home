@@ -17,7 +17,7 @@ const MenuItems = (props) => {
   return (
     <div>
       <div className="card-deck">
-        <div className="row row-cols-lg-3 row-cols-sm-2">
+        <div className="row row-cols-xl-3 row-cols-lg-3 row-cols-sm-1 row-cols-md-2">
           {props.sushiItems.map(el => <Item key={el.id}
                                             currentItem={el}
                                             openItemPage={openItemPage}

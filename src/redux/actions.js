@@ -17,6 +17,7 @@ export function decrementCount(args) {
 export function deleteItem(args) {
   return {type: 'DELETE_ITEM_IN_CART', payload: args}
 }
+
 export function clearCart() {
   return {type: 'CLEAR_ITEMS_IN_CART'}
 }
