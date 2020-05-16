@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a47a8f40.chunk.css",
+    "main.js": "/static/js/main.3a0b99cf.chunk.js",
+    "main.js.map": "/static/js/main.3a0b99cf.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.35c6da4a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.35c6da4a.js.map",
+    "static/css/2.74189dbb.chunk.css": "/static/css/2.74189dbb.chunk.css",
+    "static/js/2.18cba099.chunk.js": "/static/js/2.18cba099.chunk.js",
+    "static/js/2.18cba099.chunk.js.map": "/static/js/2.18cba099.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.c67a0fd6d74567d7bfc36593f2905802.js": "/precache-manifest.c67a0fd6d74567d7bfc36593f2905802.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.74189dbb.chunk.css.map": "/static/css/2.74189dbb.chunk.css.map",
+    "static/css/main.a47a8f40.chunk.css.map": "/static/css/main.a47a8f40.chunk.css.map",
+    "static/js/2.18cba099.chunk.js.LICENSE.txt": "/static/js/2.18cba099.chunk.js.LICENSE.txt",
+    "static/media/20190919_114832_гонконг.jpg": "/static/media/20190919_114832_гонконг.15c1d70f.jpg",
+    "static/media/20190919_115057_масаго з лосоем.jpg": "/static/media/20190919_115057_масаго з лосоем.46d71a3e.jpg",
+    "static/media/20190919_115312_рол з копченим лососем.jpg": "/static/media/20190919_115312_рол з копченим лососем.2780da08.jpg",
+    "static/media/20190919_115708_філ. з авокадо.jpg": "/static/media/20190919_115708_філ. з авокадо.8ba9f04d.jpg",
+    "static/media/20190919_115733_філад. з масялною рибою.jpg": "/static/media/20190919_115733_філад. з масялною рибою.f8ac0693.jpg",
+    "static/media/20200312_161001_1111.jpg": "/static/media/20200312_161001_1111.9e2d2ff2.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.35c6da4a.js",
+    "static/css/2.74189dbb.chunk.css",
+    "static/js/2.18cba099.chunk.js",
+    "static/css/main.a47a8f40.chunk.css",
+    "static/js/main.3a0b99cf.chunk.js"
+  ]
+}
