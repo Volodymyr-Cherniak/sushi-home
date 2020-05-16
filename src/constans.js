@@ -1,5 +1,5 @@
 export const address = {
-  server: 'https://sushiserver.netlify.app',
+  remote: 'https://sushiserver.netlify.app',
   localAddress: 'http://localhost:9000',
 }
 

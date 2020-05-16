@@ -21,11 +21,10 @@ const CartItems = (props) => {
     const newArgs = {...args, info: '(' + args.info + ')'};
 
     const textMessage = Object.values(newArgs) + ',' + cartItems;
-    console.log('message', textMessage);
     setSuccess(true);
     clearCart();
-
-    fetch(`${address.server}/.netlify/functions/api/send-text?message=${textMessage}`)
+    fetch(`${address.remote}/.netlify/functions/api/send-text?message=${textMessage}`, { mode: 'no-cors'})
+      .catch(err => console.error(err))
   }
   //////////////////////////////
 
