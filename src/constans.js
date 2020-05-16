@@ -1,3 +1,8 @@
+export const address = {
+  remote: 'https://sushiserver.netlify.app',
+  localAddress: 'http://localhost:9000',
+}
+
 export const sushi = [
   {
     id: 1,
