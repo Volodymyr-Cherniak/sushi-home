@@ -10,22 +10,22 @@ import {address} from "../constans";
 const CartItems = (props) => {
 
 
+  const [success, setSuccess] = useState(false);
+  const [modal, setModal] = useState(false);
+
   const toggle = () => setModal(!modal);
 
   //////////////////////////////
-  const [modal, setModal] = useState(false);
-  const [success, setSuccess] = useState(false);
-
-  const sendText = (args) => {
-    const cartItems = props.itemsInCart.map(el => el.name + '(' + el.count + ')');
-    const newArgs = {...args, info: '(' + args.info + ')'};
-
-    const textMessage = Object.values(newArgs) + ',' + cartItems;
-    setSuccess(true);
-    clearCart();
-    fetch(`${address.remote}/.netlify/functions/api/send-text?message=${textMessage}`, { mode: 'no-cors'})
-      .catch(err => console.error(err))
-  }
+  // const sendText = (args) => {
+  //   const cartItems = props.itemsInCart.map(el => el.name + '(' + el.count + ')');
+  //   const newArgs = {...args, info: '(' + args.info + ')'};
+  //
+  //   const textMessage = Object.values(newArgs) + ',' + cartItems;
+  //   setSuccess(true);
+  //   clearCart();
+  //   fetch(`${address.remote}/.netlify/functions/api/send-text?message=${textMessage}`, { mode: 'no-cors'})
+  //     .catch(err => console.error(err))
+  // }
   //////////////////////////////
 
   const incrementCount = (args) => {
@@ -53,19 +53,26 @@ const CartItems = (props) => {
   if (!props.itemsInCart[0] && success === false) {
     return (
       <div className='mt-3'>
-        <h5>Cart is empty</h5>
+        <h5>
+
+          Cart is empty
+
+        </h5>
         <Link to={`/sushi-home`}>
           <button className='btn btn-outline-warning mt-2'>Back home page</button>
         </Link>
       </div>
     )
   }
-  console.log('success', success)
+
+
   if (success === true && !props.itemsInCart[0]) {
     return (
       <div>
         <div className='card mt-3 p-2'>
+
           Thank you for your order, we will call you
+
         </div>
         <Link to={`/sushi-home`}>
           <button className='btn btn-outline-warning mt-2'>Back home page</button>
@@ -93,9 +100,9 @@ const CartItems = (props) => {
         <button className='btn btn-outline-success' onClick={toggle}>Checkout order for {sumAllItems + ' '}₴</button>
       </div>
 
-      <div>
-        <Checkout toggle={toggle} modal={modal} sendText={sendText}/>
-      </div>
+      {/*<div>*/}
+      {/*  <Checkout toggle={toggle} modal={modal} sendText={sendText}/>*/}
+      {/*</div>*/}
     </div>
   );
 }
