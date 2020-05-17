@@ -16,7 +16,7 @@ const Item = ({currentItem, openItemPage, addItemInCart, inCart}) => {
   }
 
   return (
-    <div className="col mt-lg-3">
+    <div className="col mb-3">
       <div className="card h-100 shadow bg-white rounded">
         <Link to={`/item/${id}`} onClick={() => openItemPage(id)}>
           <img src={img} className="card-img-top" alt="..."/>
