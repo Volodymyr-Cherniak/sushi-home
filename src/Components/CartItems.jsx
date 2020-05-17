@@ -61,6 +61,7 @@ const CartItems = (props) => {
     )
   }
   console.log('success', success)
+
   if (success === true && !props.itemsInCart[0]) {
     return (
       <div>
