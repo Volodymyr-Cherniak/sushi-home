@@ -22,10 +22,10 @@ const ItemPage = ({currentItem, addToCart, inCart}) => {
   return (
     <div className="card mb-3 mt-3" style={{maxWidth: 'auto'}}>
       <div className="row no-gutters">
-        <div className="col-7">
+        <div className="col-lg-7">
           <img src={img} className="card-img" alt="..."/>
         </div>
-        <div className="col-5">
+        <div className="col-lg-5">
           <div className="card-body">
             <h5 className="card-title">{name}</h5>
             <p className="card-text">{text}</p>

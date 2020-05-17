@@ -11,7 +11,7 @@ const App = () => {
 
   return (
     <Router>
-      <div className='container'>
+      <div className='container-lg'>
         <NavBar/>
 
         {routes}
