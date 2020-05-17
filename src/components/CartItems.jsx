@@ -15,18 +15,18 @@ const CartItems = (props) => {
 
   const toggle = () => setModal(!modal);
 
-  //////////////////////////////
-  // const sendText = (args) => {
-  //   const cartItems = props.itemsInCart.map(el => el.name + '(' + el.count + ')');
-  //   const newArgs = {...args, info: '(' + args.info + ')'};
-  //
-  //   const textMessage = Object.values(newArgs) + ',' + cartItems;
-  //   setSuccess(true);
-  //   clearCart();
-  //   fetch(`${address.remote}/.netlify/functions/api/send-text?message=${textMessage}`, { mode: 'no-cors'})
-  //     .catch(err => console.error(err))
-  // }
-  //////////////////////////////
+  ////////////////////////////
+  const sendText = (args) => {
+    const cartItems = props.itemsInCart.map(el => el.name + '(' + el.count + ')');
+    const newArgs = {...args, info: '(' + args.info + ')'};
+
+    const textMessage = Object.values(newArgs) + ',' + cartItems;
+    setSuccess(true);
+    clearCart();
+    fetch(`${address.remote}/.netlify/functions/api/send-text?message=${textMessage}`, { mode: 'no-cors'})
+      .catch(err => console.error(err))
+  }
+  ////////////////////////////
 
   const incrementCount = (args) => {
     props.incrementCount(args);
@@ -101,7 +101,7 @@ const CartItems = (props) => {
       </div>
 
       <div>
-        <Checkout toggle={toggle} modal={modal} /*sendText={sendText}*//>
+        <Checkout toggle={toggle} modal={modal} sendText={sendText}/>
       </div>
     </div>
   );

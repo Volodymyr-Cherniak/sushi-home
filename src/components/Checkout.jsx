@@ -8,14 +8,14 @@ const Checkout = (props) => {
   const [sushiSticks, setSushiSticks] = useState('');
   const [info, setInfo] = useState('');
 
-  // const submitButton = () => {
-  //   props.sendText({name, phone, sushiSticks, info});
-  //   setName('');
-  //   setPhone('');
-  //   setSushiSticks('');
-  //   setInfo('');
-  //   props.toggle();
-  // }
+  const submitButton = () => {
+    props.sendText({name, phone, sushiSticks, info});
+    setName('');
+    setPhone('');
+    setSushiSticks('');
+    setInfo('');
+    props.toggle();
+  }
 
   return (
     <div>
@@ -53,7 +53,7 @@ const Checkout = (props) => {
           </Form>
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" /*onClick={submitButton}*/ >Checkout order</Button>{' '}
+          <Button color="primary" onClick={submitButton} >Checkout order</Button>{' '}
           <Button color="secondary" onClick={props.toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>
