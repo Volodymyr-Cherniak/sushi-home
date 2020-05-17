@@ -8,14 +8,14 @@ const Checkout = (props) => {
   const [sushiSticks, setSushiSticks] = useState('');
   const [info, setInfo] = useState('');
 
-  const submitButton = () => {
-    props.sendText({name, phone, sushiSticks, info});
-    setName('');
-    setPhone('');
-    setSushiSticks('');
-    setInfo('');
-    props.toggle();
-  }
+  // const submitButton = () => {
+  //   props.sendText({name, phone, sushiSticks, info});
+  //   setName('');
+  //   setPhone('');
+  //   setSushiSticks('');
+  //   setInfo('');
+  //   props.toggle();
+  // }
 
   return (
     <div>
@@ -34,14 +34,14 @@ const Checkout = (props) => {
               <Label for="phone">Phone number</Label>
 
               <Input type="number" name="phone" value={phone} required onChange={e => setPhone(e.target.value)}
-                     placeholder="example 0973366111"/>
+                     placeholder="For example 0973366111"/>
             </FormGroup>
 
             <FormGroup>
               <Label for="fork">Sushi sticks</Label>
 
               <Input type="number" name="number" value={sushiSticks} onChange={e => setSushiSticks(e.target.value)}
-                     placeholder="how mach person will be eat sushi"/>
+                     placeholder="How much persons will be eating sushi"/>
             </FormGroup>
 
             <FormGroup>
@@ -53,7 +53,7 @@ const Checkout = (props) => {
           </Form>
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={submitButton} >Checkout order</Button>{' '}
+          <Button color="primary" /*onClick={submitButton}*/ >Checkout order</Button>{' '}
           <Button color="secondary" onClick={props.toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>

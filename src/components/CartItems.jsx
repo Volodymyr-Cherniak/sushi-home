@@ -100,9 +100,9 @@ const CartItems = (props) => {
         <button className='btn btn-outline-success' onClick={toggle}>Checkout order for {sumAllItems + ' '}₴</button>
       </div>
 
-      {/*<div>*/}
-      {/*  <Checkout toggle={toggle} modal={modal} sendText={sendText}/>*/}
-      {/*</div>*/}
+      <div>
+        <Checkout toggle={toggle} modal={modal} /*sendText={sendText}*//>
+      </div>
     </div>
   );
 }
