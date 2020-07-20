@@ -5,9 +5,12 @@ import {clearCart, decrementCount, deleteItem, incrementCount, pageItemById} fro
 import CartItem from "./CartItem";
 import Checkout from "./Checkout";
 import {address} from "../constans";
+import axios from "axios";
 
 
 const CartItems = (props) => {
+
+  const {itemsInCart} = props;
 
 
   const [success, setSuccess] = useState(false);
@@ -15,18 +18,34 @@ const CartItems = (props) => {
 
   const toggle = () => setModal(!modal);
 
-  ////////////////////////////
+  //////////////Twilio//////////////
   const sendText = (args) => {
-    const cartItems = props.itemsInCart.map(el => el.name + '(' + el.count + ')');
+    const cartItems = itemsInCart.map(el => el.name + '(' + el.count + ')');
     const newArgs = {...args, info: '(' + args.info + ')'};
 
     const textMessage = Object.values(newArgs) + ',' + cartItems;
     setSuccess(true);
-    //clearCart();
-    fetch(`${address.remote}/.netlify/functions/api/send-text?message=${textMessage}`, { mode: 'no-cors'})
+    clearCart();
+    axios.get(`${address.remote}/.netlify/functions/api/send-text?message=${textMessage}`, {mode: 'no-cors'})
+      .then(res => console.log(res.data))
       .catch(err => console.error(err))
   }
-  ////////////////////////////
+
+  /////////////email-sender///////////////
+  const sendEmail = async (args) => {
+    const cartItems = itemsInCart.map(el => ({name: el.name, count: el.count}));
+    await axios
+      .post(`${address.remote}/.netlify/functions/api/send-text-toEmail`, {...args, cartItems})
+      .then(res => {
+        console.log(res)
+        if (res) {
+          setSuccess(true);
+          clearCart();
+        }
+      })
+      .catch(err => console.log(err));
+  }
+  /////////////////////////////////////
 
   const incrementCount = (args) => {
     props.incrementCount(args);
@@ -48,9 +67,9 @@ const CartItems = (props) => {
     props.pageItemById(id)
   }
 
-  const sumAllItems = props.itemsInCart.reduce((acc, curr) => acc + curr.sum, 0);
+  const sumAllItems = itemsInCart.reduce((acc, curr) => acc + curr.sum, 0);
 
-  if (!props.itemsInCart[0] && success === false) {
+  if (!itemsInCart[0] && success === false) {
     return (
       <div className='mt-3'>
         <h5>
@@ -66,7 +85,7 @@ const CartItems = (props) => {
   }
 
 
-  if (success === true && !props.itemsInCart[0]) {
+  if (success === true && !itemsInCart[0]) {
     return (
       <div>
         <div className='card mt-3 p-2'>
@@ -84,7 +103,7 @@ const CartItems = (props) => {
   return (
     <div>
       {
-        props.itemsInCart.map(el =>
+        itemsInCart.map(el =>
           <CartItem key={el.name}
                     itemInCart={el}
                     incrementCount={incrementCount}
@@ -101,7 +120,7 @@ const CartItems = (props) => {
       </div>
 
       <div>
-        <Checkout toggle={toggle} modal={modal} sendText={sendText}/>
+        <Checkout toggle={toggle} modal={modal} sendText={sendText} sendEmail={sendEmail}/>
       </div>
     </div>
   );

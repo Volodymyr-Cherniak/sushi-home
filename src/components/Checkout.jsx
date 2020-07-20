@@ -9,7 +9,8 @@ const Checkout = (props) => {
   const [info, setInfo] = useState('');
 
   const submitButton = () => {
-    props.sendText({name, phone, sushiSticks, info});
+    //props.sendText({name, phone, sushiSticks, info});
+    props.sendEmail({name, phone, sushiSticks, info});
     setName('');
     setPhone('');
     setSushiSticks('');
@@ -53,6 +54,7 @@ const Checkout = (props) => {
           </Form>
         </ModalBody>
         <ModalFooter>
+          {/*<Button color="primary" onClick={submitButton} >Checkout order in whatsApp</Button>{' '}*/}
           <Button color="primary" onClick={submitButton} >Checkout order</Button>{' '}
           <Button color="secondary" onClick={props.toggle}>Cancel</Button>
         </ModalFooter>
