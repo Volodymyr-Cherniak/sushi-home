@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 
-const Item = ({currentItem, openItemPage, addItemInCart, inCart}) => {
+const Item = ({currentItem, openItemPage, addItemInCart, inCart, locals}) => {
 
   const {name, img, text, price, weight, id, currency} = currentItem;
 
@@ -10,9 +10,9 @@ const Item = ({currentItem, openItemPage, addItemInCart, inCart}) => {
 
   const isItemsInCart = () => {
     if(ItemsInCart) {
-      return <button className='btn btn-warning' onClick={() => addItemInCart(currentItem)}>{'In cart ' + ItemsInCart.count}</button>
+      return <button className='btn btn-warning' onClick={() => addItemInCart(currentItem)}>{locals.buttons.inCart + ' ' + ItemsInCart.count}</button>
     }
-    return <button className='btn btn-success' onClick={() => addItemInCart(currentItem)}>In cart</button>
+    return <button className='btn btn-success' onClick={() => addItemInCart(currentItem)}>{locals.buttons.inCart}</button>
   }
 
   return (
@@ -45,6 +45,7 @@ const Item = ({currentItem, openItemPage, addItemInCart, inCart}) => {
 
 const mapStateToProps = (state) => ({
   inCart: state.inCart,
+  locals: state.localization,
 });
 
 export default connect(mapStateToProps)(Item);

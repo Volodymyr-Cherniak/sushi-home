@@ -20,3 +20,7 @@ export function deleteItem(args) {
 export function clearCart() {
   return {type: 'CLEAR_ITEMS_IN_CART'}
 }
+export function changeLanguage(boolean) {
+  console.log('boolean', boolean)
+  return {type: 'CHANGE_LANGUAGE', payload: boolean}
+}

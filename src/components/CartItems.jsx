@@ -9,9 +9,7 @@ import axios from "axios";
 
 
 const CartItems = (props) => {
-
-  const {itemsInCart} = props;
-
+  const { itemsInCart, locals, incrementCount, decrementCount, deleteItem, clearCart, pageItemById } = props;
 
   const [success, setSuccess] = useState(false);
   const [modal, setModal] = useState(false);
@@ -47,38 +45,16 @@ const CartItems = (props) => {
   }
   /////////////////////////////////////
 
-  const incrementCount = (args) => {
-    props.incrementCount(args);
-  }
-
-  const decrementCount = (args) => {
-    props.decrementCount(args);
-  }
-
-  const deleteItem = (args) => {
-    props.deleteItem(args)
-  }
-
-  const clearCart = () => {
-    props.clearCart()
-  }
-
-  const openItemPage = (id) => {
-    props.pageItemById(id)
-  }
 
   const sumAllItems = itemsInCart.reduce((acc, curr) => acc + curr.sum, 0);
 
   if (!itemsInCart[0] && success === false) {
     return (
       <div className='mt-3'>
-        <h5>
+        <h5>{locals.cartPage.textGeneral}</h5>
 
-          Cart is empty
-
-        </h5>
         <Link to={`/sushi-home`}>
-          <button className='btn btn-outline-warning mt-2'>Back home page</button>
+          <button className='btn btn-outline-warning mt-2'>{locals.buttons.backToHome}</button>
         </Link>
       </div>
     )
@@ -90,11 +66,11 @@ const CartItems = (props) => {
       <div>
         <div className='card mt-3 p-2'>
 
-          Thank you for your order, we will call you
+          {locals.cartPage.textFinish}
 
         </div>
         <Link to={`/sushi-home`}>
-          <button className='btn btn-outline-warning mt-2'>Back home page</button>
+          <button className='btn btn-outline-warning mt-2'>{locals.buttons.backToHome}</button>
         </Link>
       </div>
     )
@@ -109,25 +85,27 @@ const CartItems = (props) => {
                     incrementCount={incrementCount}
                     decrementCount={decrementCount}
                     deleteItem={deleteItem}
-                    openItemPage={openItemPage}
+                    openItemPage={pageItemById}
+                    locals={locals}
           />
         )
       }
       <div className='d-flex justify-content-between'>
-        <button className='btn btn-outline-warning' onClick={clearCart}>Clear cart</button>
+        <button className='btn btn-outline-warning' onClick={() => clearCart()}>{locals.buttons.clearCart}</button>
 
-        <button className='btn btn-outline-success' onClick={toggle}>Checkout order for {sumAllItems + ' '}₴</button>
+        <button className='btn btn-outline-success' onClick={toggle}>{`${locals.buttons.checkout} ${sumAllItems} `}₴</button>
       </div>
 
       <div>
-        <Checkout toggle={toggle} modal={modal} sendText={sendText} sendEmail={sendEmail}/>
+        <Checkout toggle={toggle} modal={modal} sendText={sendText} sendEmail={sendEmail} locals={locals}/>
       </div>
     </div>
   );
 }
 
 const mapStateToProps = state => ({
-  itemsInCart: state.inCart
+  itemsInCart: state.inCart,
+  locals: state.localization,
 });
 
 const mapDispatchToProps = dispatch => ({
