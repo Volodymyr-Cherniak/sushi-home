@@ -17,7 +17,6 @@ const ItemPage = ({currentItem, addToCart, inCart, locals}) => {
     return locals.buttons.inCart
   }
 
-  console.log('currentItem', currentItem);
 
   return (
     <div className="card mb-3 mt-3" style={{maxWidth: 'auto'}}>
