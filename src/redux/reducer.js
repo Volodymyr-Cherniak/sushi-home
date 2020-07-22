@@ -1,10 +1,12 @@
-import {sushi} from "../constans";
+import {Generalstate} from "../constans";
 
 
 const initialState = {
-  sushiItems: [...sushi],
+  localization: {...Generalstate.language.eng.localization},
+  sushiItems: [...Generalstate.language.eng.items],
   currentItem: {},
-  inCart: []
+  inCart: [],
+  english: true,
 };
 
 const sushiItems = (state = initialState, action) => {
@@ -62,6 +64,25 @@ const sushiItems = (state = initialState, action) => {
         inCart: [],
       }
 
+    case 'CHANGE_LANGUAGE':
+      state.english = !state.english;
+      if (state.english) {
+        return {
+          ...state,
+          localization: Generalstate.language.eng.localization,
+          sushiItems: Generalstate.language.eng.items,
+          currentItem: {},
+          inCart: [],
+        }
+      } else {
+        return {
+          ...state,
+          localization: Generalstate.language.ukr.localization,
+          sushiItems: Generalstate.language.ukr.items,
+          currentItem: {},
+          inCart: [],
+        }
+      }
 
     default:
       return state;

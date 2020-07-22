@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 
 const CartItem = (props) => {
-  const {itemInCart, decrementCount, incrementCount, deleteItem, openItemPage} = props;
+  const {itemInCart, decrementCount, incrementCount, deleteItem, openItemPage, locals} = props;
   const {img, name, count, sum, currency, id} = itemInCart;
 
   return (
@@ -32,7 +32,7 @@ const CartItem = (props) => {
             </button>
 
             <span className=' ml-1 mr-1'><strong>{sum + ' '}{currency}</strong></span>
-            <button className='btn btn-outline-danger ' onClick={() => deleteItem(itemInCart)}>Delete</button>
+            <button className='btn btn-outline-danger ' onClick={() => deleteItem(itemInCart)}>{locals.buttons.remove}</button>
           </div>
         </div>
       </div>
