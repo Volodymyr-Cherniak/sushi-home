@@ -21,7 +21,7 @@ export const Generalstate = {
           checkoutOrder: 'Checkout order',
           cancel: 'Cancel',
           remove: 'Delete',
-          language: 'eng',
+          language: 'ukr',
         },
         contactPage: {
           textGeneral: 'You can find us here:',
@@ -196,7 +196,7 @@ export const Generalstate = {
           checkoutOrder: 'Зробити замовлення',
           cancel: 'Відінити',
           remove: 'Видалити',
-          language: 'ukr',
+          language: 'eng',
         },
         contactPage: {
           textGeneral: 'Ви можете нас знайти тут',
