@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Button, Form, FormGroup, Input, Label, Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 
 const Checkout = (props) => {
-  const {toggle, modal, sendText, sendEmail, locals} = props;
+  const {toggle, modal, sendEmail, locals} = props;
 
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
