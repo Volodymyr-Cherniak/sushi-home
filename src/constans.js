@@ -1,5 +1,3 @@
-import React from "react";
-
 export const address = {
   remote: 'https://sushi-server.netlify.app',
   localAddress: 'http://localhost:9000',
