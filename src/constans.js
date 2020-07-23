@@ -48,7 +48,7 @@ export const Generalstate = {
         {
           id: 1,
           name: "Smoked Fish",
-          img: require('./images/20190919_115312_рол з копченим лососем.jpg'),
+          img: 'https://i.ibb.co/pr81cfz/20190919-115312.jpg',
           price: 112,
           currency: '₴',
           text: 'Rice, Nori, Cucumber, Sesame white, Mayonnaise, Smoked salmon',
@@ -59,7 +59,7 @@ export const Generalstate = {
         {
           id: 2,
           name: "Philadelphia Green",
-          img: require('./images/20190919_115708_філ. з авокадо.jpg'),
+          img: 'https://i.ibb.co/jvzzKLs/20190919-115708.jpg',
           price: 127,
           currency: '₴',
           text: 'Rice, Nori, Cream cheese, Cucumber, Sesame white, Avocado, Oil fish',
@@ -70,7 +70,7 @@ export const Generalstate = {
         {
           id: 3,
           name: "Set",
-          img: require('./images/20200312_161001_1111.jpg'),
+          img: 'https://i.ibb.co/7JjFz2Z/20200312-161001-1111.jpg',
           price: 238,
           currency: '₴',
           text: 'Rice, Nori, Cream cheese, Cucumber, Sesame white, Avocado, Oil fish',
@@ -81,7 +81,7 @@ export const Generalstate = {
         {
           id: 4,
           name: "Oil Fish",
-          img: require('./images/20190919_115733_філад. з масялною рибою.jpg'),
+          img: 'https://i.ibb.co/D8WWHZQ/20190919-115733.jpg',
           price: 108,
           currency: '₴',
           text: 'Rice, Nori, Cream cheese, Cucumber, Sesame white, Avocado, Oil fish',
@@ -92,7 +92,7 @@ export const Generalstate = {
         {
           id: 5,
           name: "Masago",
-          img: require('./images/20190919_115057_масаго з лосоем.jpg'),
+          img: 'https://i.ibb.co/M61hc1q/20190919-115057.jpg',
           price: 139.00,
           currency: '₴',
           text: 'Rice, Nori, Cream Cheese, Cucumber, Masago Caviar, Fresh Salmon',
@@ -113,7 +113,7 @@ export const Generalstate = {
         {
           id: 7,
           name: "California with tuna",
-          img: require('./images/Каліфорнія з тунцем.jpg'),
+          img: 'https://i.ibb.co/JtNWXLy/image.jpg',
           price: 134.00,
           currency: '₴',
           text: 'Rice, Nori, Cucumber, Spice mayonnaise, Mayonnaise, Tobiko black caviar, Chives, Tuna, Tobiko red caviar',
@@ -121,11 +121,10 @@ export const Generalstate = {
           active: false,
           count: 1,
         },
-
         {
           id: 8,
           name: "cheese roll",
-          img: require('./images/Сирний.jpg'),
+          img: 'https://i.ibb.co/5vKZBND/image.jpg',
           price: 96.00,
           currency: '₴',
           text: 'Rice, Nori, Cream Cheese, Sesame White, Processed Cheese, Feta Cheese',
@@ -136,7 +135,7 @@ export const Generalstate = {
         {
           id: 9,
           name: "Filadelfia with oil fish",
-          img: require('./images/Філадельфія з масляною рибою.jpg'),
+          img: 'https://i.ibb.co/bmbtd7s/image.jpg',
           price: 89.00,
           currency: '₴',
           text: 'Rice, nori, cream cheese, cucumber, black sesame, oil fish',
@@ -147,7 +146,7 @@ export const Generalstate = {
         {
           id: 10,
           name: "Filadelfia",
-          img: require('./images/Філадельфія.jpg'),
+          img: 'https://i.ibb.co/wQtshLL/image.jpg',
           price: 149.00,
           currency: '₴',
           text: 'Rice, Nori, Cream Cheese, Cucumber, Fresh Salmon',
@@ -158,7 +157,7 @@ export const Generalstate = {
         {
           id: 11,
           name: "Hosomaki with bake salmon",
-          img: require('./images/Хосомакі з запеченим лососем.jpg'),
+          img: 'https://i.ibb.co/52c1KLh/image.jpg',
           price: 74.00,
           currency: '₴',
           text: 'Rice, Nori, Bake salmon',
@@ -169,7 +168,7 @@ export const Generalstate = {
         {
           id: 12,
           name: "Hosomaki with Smoked salmon",
-          img: require('./images/Хосомакі з копченим лососем.jpg'),
+          img: 'https://i.ibb.co/kc6tx2W/image.jpg',
           price: 99.00,
           currency: '₴',
           text: 'Rice, Nori, Smoked salmon',
@@ -224,7 +223,7 @@ export const Generalstate = {
         {
           id: 1,
           name: "Копчений лосось",
-          img: require('./images/20190919_115312_рол з копченим лососем.jpg'),
+          img: 'https://i.ibb.co/pr81cfz/20190919-115312.jpg',
           price: 112,
           currency: '₴',
           text: 'Рис, Норі, Огірок, Кунжут білий, Майонез, Лосось копчений',
@@ -235,7 +234,7 @@ export const Generalstate = {
         {
           id: 2,
           name: "Філадельфія грін",
-          img: require('./images/20190919_115708_філ. з авокадо.jpg'),
+          img: 'https://i.ibb.co/jvzzKLs/20190919-115708.jpg',
           price: 127,
           currency: '₴',
           text: 'Рис, Норі, Крем-сир, Огірок, Кунжут білий, Авокадо, Масляна риба',
@@ -246,7 +245,7 @@ export const Generalstate = {
         {
           id: 3,
           name: "Сет",
-          img: require('./images/20200312_161001_1111.jpg'),
+          img: 'https://i.ibb.co/7JjFz2Z/20200312-161001-1111.jpg',
           price: 238,
           currency: '₴',
           text: 'Рис, Норі, Крем-сир, Огірок, Кунжут білий, Авокадо, Масляна риба',
@@ -257,7 +256,7 @@ export const Generalstate = {
         {
           id: 4,
           name: "Масляна риба",
-          img: require('./images/20190919_115733_філад. з масялною рибою.jpg'),
+          img: 'https://i.ibb.co/D8WWHZQ/20190919-115733.jpg',
           price: 108,
           currency: '₴',
           text: 'Рис, Норі, Крем-сир, Огірок, Кунжут білий, Авокадо, Масляна риба',
@@ -268,7 +267,7 @@ export const Generalstate = {
         {
           id: 5,
           name: "Массаго",
-          img: require('./images/20190919_115057_масаго з лосоем.jpg'),
+          img: 'https://i.ibb.co/M61hc1q/20190919-115057.jpg',
           price: 139.00,
           currency: '₴',
           text: 'Рис, Норі, Крем-сир, Огірок, Ікра масаго, Лосось свіжий',
@@ -278,7 +277,7 @@ export const Generalstate = {
         {
           id: 6,
           name: "Гонконг",
-          img: require('./images/20190919_114832_гонконг.jpg'),
+          img: 'https://i.ibb.co/pyGnj2n/20190919-114832.jpg',
           price: 134.00,
           currency: '₴',
           text: 'Рис, Норі, Крем-сир, соус Унагі, Огірок, Кунжут білий, Зелена цибуля, Вугор, Лосось свіжий',
@@ -289,7 +288,7 @@ export const Generalstate = {
         {
           id: 7,
           name: "Каліфорнія з тунцем",
-          img: require('./images/Каліфорнія з тунцем.jpg'),
+          img: 'https://i.ibb.co/JtNWXLy/image.jpg',
           price: 134.00,
           currency: '₴',
           text: 'Рис, Норі, Крем-сир, соус Унагі, Огірок, Кунжут білий, Зелена цибуля, Вугор, Лосось свіжий',
@@ -300,7 +299,7 @@ export const Generalstate = {
         {
           id: 8,
           name: "Сирний рол",
-          img: require('./images/Сирний.jpg'),
+          img: 'https://i.ibb.co/5vKZBND/image.jpg',
           price: 96.00,
           currency: '₴',
           text: 'Рис, Норі, Крем-сир, Кунжут білий, Сир плавлений, Сир фета',
@@ -311,7 +310,7 @@ export const Generalstate = {
         {
           id: 9,
           name: "Філадельфія з масляною рибою",
-          img: require('./images/Філадельфія з масляною рибою.jpg'),
+          img: 'https://i.ibb.co/bmbtd7s/image.jpg',
           price: 89.00,
           currency: '₴',
           text: 'Рис, Норі, Крем-сир, Огірок, Кунжут чорний, Масляна риба',
@@ -322,7 +321,7 @@ export const Generalstate = {
         {
           id: 10,
           name: "Філадельфія",
-          img: require('./images/Філадельфія.jpg'),
+          img: 'https://i.ibb.co/wQtshLL/image.jpg',
           price: 149.00,
           currency: '₴',
           text: 'Рис, Норі, Крем-сир, Огірок, Лосось свіжий',
@@ -333,7 +332,7 @@ export const Generalstate = {
         {
           id: 11,
           name: "Хосомакі з запеченим лососем",
-          img: require('./images/Хосомакі з запеченим лососем.jpg'),
+          img: 'https://i.ibb.co/52c1KLh/image.jpg',
           price: 74.00,
           currency: '₴',
           text: 'Рис, Норі, Лосось запечений',
@@ -344,7 +343,7 @@ export const Generalstate = {
         {
           id: 12,
           name: "Хосомакі з копченим лососем",
-          img: require('./images/Хосомакі з копченим лососем.jpg'),
+          img: 'https://i.ibb.co/kc6tx2W/image.jpg',
           price: 99.00,
           currency: '₴',
           text: 'Рис, Норі, Лосось копчений',
