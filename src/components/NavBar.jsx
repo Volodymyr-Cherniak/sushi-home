@@ -32,7 +32,7 @@ const NavBar = (props) => {
         {totalItems > 0 &&
         <Link to='/cart'>
           <button className="btn btn-outline-success mr-1">
-            {locals.navbar.cart + ' '} <strong>{sumAllItems + ' '}₴</strong>
+            {locals.navbar.cart2 + ' '} <strong>{sumAllItems + ' '}₴</strong>
           </button>
         </Link>
         }

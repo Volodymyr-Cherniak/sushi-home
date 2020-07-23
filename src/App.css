@@ -6,4 +6,36 @@
   background-color: #58F5A6;
   box-shadow: 5px 4px 9px 0 #36543459;
 }
+.text-end{
+  text-align: end !important;
+}
 
+@media only screen and (max-width: 992px){
+  nav{
+    height: 7rem;
+  }
+  nav > a{
+    font-size: xxx-large !important;
+    align-self: flex-start;
+  }
+  nav > div > ul > li > a{
+    font-size: xx-large !important;
+  }
+  p{
+    font-size: x-large !important;
+  }
+  button{
+    font-size: xx-large !important;
+  }
+  h5{
+    font-size: xx-large !important;
+    font-weight: bold;
+  }
+  div>div>a{
+    font-size: xx-large !important;
+  }
+  div>div>span>strong{
+    font-size: xx-large !important;
+    vertical-align: middle;
+  }
+}
