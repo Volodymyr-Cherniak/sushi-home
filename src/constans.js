@@ -102,7 +102,7 @@ export const Generalstate = {
         {
           id: 6,
           name: "Hong Kong",
-          img: require('./images/20190919_114832_гонконг.jpg'),
+          img: 'https://i.ibb.co/pyGnj2n/20190919-114832.jpg',
           price: 134,
           currency: '₴',
           text: 'Rice, Nori, Cream cheese, Unagi sauce, Cucumber, Sesame white, Chives, Eel, Fresh salmon',
