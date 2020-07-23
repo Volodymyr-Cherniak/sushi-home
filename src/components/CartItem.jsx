@@ -20,7 +20,7 @@ const CartItem = (props) => {
             <h5>{name}</h5>
           </div>
 
-          <div className="col text-center">
+          <div className="col-5 text-end">
             <button className='btn btn-outline-secondary ml-auto btn-sm'
                     onClick={() => decrementCount(itemInCart)}>-
             </button>

@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 const MenuItems = ({locals}) => {
   return (
     <div className='mt-4 '>
-      <h4>{locals.contactPage.textGeneral}</h4>
+      <h5>{locals.contactPage.textGeneral}</h5>
       <a href="https://www.facebook.com/">
         Facebook
       </a>

@@ -11,7 +11,8 @@ export const Generalstate = {
           logo: 'Sushi-Home',
           menuItems: 'Sushi',
           contact: 'Contact',
-          cart: 'Cart'
+          cart: 'Cart',
+          cart2: 'Cart',
         },
         buttons: {
           inCart: 'in Cart',
@@ -185,7 +186,8 @@ export const Generalstate = {
           logo: 'Sushi-Home',
           menuItems: 'Суші',
           contact: 'Контакти',
-          cart: 'Корзина'
+          cart: 'Корзина',
+          cart2: '',
         },
         buttons: {
           inCart: 'в корзину',
@@ -194,7 +196,7 @@ export const Generalstate = {
           checkout: 'Зробити замовлення за',
           checkoutOrder: 'Зробити замовлення',
           cancel: 'Відінити',
-          remove: 'Видалити',
+          remove: 'X',
           language: 'eng',
         },
         contactPage: {
