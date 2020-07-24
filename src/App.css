@@ -21,7 +21,7 @@
   nav > div > ul > li > a{
     font-size: xx-large !important;
   }
-  p{
+  p, label, input, textarea{
     font-size: x-large !important;
   }
   button{
@@ -30,6 +30,7 @@
   h5{
     font-size: xx-large !important;
     font-weight: bold;
+    font-variant: all-small-caps
   }
   div>div>a{
     font-size: xx-large !important;

@@ -64,11 +64,11 @@ const CartItems = (props) => {
   if (success === true && !itemsInCart[0]) {
     return (
       <div>
-        <div className='card mt-3 p-2'>
+        <p className='card mt-3 p-2'>
 
           {locals.cartPage.textFinish}
 
-        </div>
+        </p>
         <Link to={`/sushi-home`}>
           <button className='btn btn-outline-warning mt-2'>{locals.buttons.backToHome}</button>
         </Link>

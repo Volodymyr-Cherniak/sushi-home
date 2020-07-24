@@ -49,7 +49,7 @@ const Checkout = (props) => {
             <FormGroup>
               <Label for="info">{locals.checkoutPage.optional}</Label>
 
-              <Input type="text" name="info" value={info} onChange={e => setInfo(e.target.value)}
+              <Input type="textarea" name="info" value={info} onChange={e => setInfo(e.target.value)}
                      placeholder={locals.checkoutPage.optionalPlaceholder}/>
             </FormGroup>
           </Form>
