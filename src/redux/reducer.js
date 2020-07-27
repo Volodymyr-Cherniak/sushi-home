@@ -64,6 +64,12 @@ const sushiItems = (state = initialState, action) => {
         inCart: [],
       }
 
+    case 'CLEAR_CURRENT_ITEM':
+      return {
+        ...state,
+        currentItem: {},
+      }
+
     case 'CHANGE_LANGUAGE':
       state.english = !state.english;
       if (state.english) {
