@@ -1,15 +1,15 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
-import {addToCart} from "../redux/actions";
+import {addToCart, clearCurrentItem} from "../redux/actions";
 
 const ItemPage = (props) => {
   const {currentItem, addToCart, inCart, locals} = props;
   const {name, img, text, price, weight, currency, id} = currentItem;
 
-  // useEffect(() => {
-  //   return () => clearCurrentItem();
-  // }, []);
+  useEffect(() => {
+    return () => props.clearCurrentItem();
+  }, []);
 
 
   if (!currentItem.img) return <Redirect to='/sushi-home'/>
@@ -61,7 +61,7 @@ const mapStateToProps = state => ({
 })
 const mapDispatchToProps = dispatch => ({
   addToCart: (args) => dispatch(addToCart(args)),
-  // clearCurrentItem: () => dispatch(clearCurrentItem()),
+  clearCurrentItem: () => dispatch(clearCurrentItem()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemPage);
