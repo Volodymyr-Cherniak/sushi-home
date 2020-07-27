@@ -1,10 +1,14 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Item from "./Item";
 import {connect} from "react-redux";
-import {addToCart, pageItemById} from "../redux/actions";
+import {addToCart, clearCurrentItem, pageItemById} from "../redux/actions";
 
 
 const MenuItems = (props) => {
+
+  useEffect(()=> {
+    props.clearCurrentItem();
+  }, []);
 
   const openItemPage = (id) => {
     props.pageItemById(id)
@@ -36,6 +40,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   pageItemById: (id) => dispatch(pageItemById(id)),
   addToCart: (args) => dispatch(addToCart(args)),
+  clearCurrentItem: () => dispatch(clearCurrentItem())
 });
 
 

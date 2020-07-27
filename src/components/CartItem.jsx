@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 const CartItem = (props) => {
   const {itemInCart, decrementCount, incrementCount, deleteItem, openItemPage, locals} = props;
-  const {img, name, count, sum, currency, id} = itemInCart;
+  const {img, name, count, sum, currency, id, price} = itemInCart;
 
   return (
     <div className="card mb-3 mt-2">
@@ -17,7 +17,7 @@ const CartItem = (props) => {
           </div>
 
           <div className="col text-center">
-            <h5>{name}</h5>
+            <h5>{name + ' -' + price + currency}</h5>
           </div>
 
           <div className="col-5 text-end">

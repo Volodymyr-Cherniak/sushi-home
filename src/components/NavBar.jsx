@@ -5,16 +5,22 @@ import {changeLanguage} from "../redux/actions";
 
 
 const NavBar = (props) => {
-  const totalItems = props.itemsInCart.length;
-  const sumAllItems = props.itemsInCart.reduce((acc, curr) => acc + curr.sum, 0);
-  const {locals, boolean, changeLanguage} = props;
+  const {locals, boolean, changeLanguage, currentItem, itemsInCart} = props;
+  const totalItems = itemsInCart.length;
+  const sumAllItems =itemsInCart.reduce((acc, curr) => acc + curr.sum, 0);
+
+  const isActve = () => {
+    if ( Object.keys(currentItem).length ) return false;
+    if( totalItems ) return false;
+    else return true;
+  }
 
   const changeLanguage1 = () => {
     changeLanguage(boolean)
   }
 
   return (
-    <nav className="navbar navbar-expand navbar-light nav mb-3">
+    <nav className="navbar navbar-expand navbar-light nav mb-3 rounded-bottom">
       <Link to="/" className="navbar-brand">{locals.navbar.logo}</Link>
 
       <div className="collapse navbar-collapse" id="navbarText">
@@ -37,7 +43,8 @@ const NavBar = (props) => {
         </Link>
         }
 
-        <button className="btn btn-outline-success" onClick={changeLanguage1}>{locals.buttons.language}</button>
+        { isActve() &&
+        <button className="btn btn-outline-success" onClick={changeLanguage1}>{locals.buttons.language}</button>}
       </div>
     </nav>
   )
@@ -45,6 +52,7 @@ const NavBar = (props) => {
 
 const mapStateToProps = state => ({
   itemsInCart: state.inCart,
+  currentItem: state.currentItem,
   locals: state.localization,
   boolean: state.english,
 })
