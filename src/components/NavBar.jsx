@@ -7,7 +7,13 @@ import {changeLanguage} from "../redux/actions";
 const NavBar = (props) => {
   const totalItems = props.itemsInCart.length;
   const sumAllItems = props.itemsInCart.reduce((acc, curr) => acc + curr.sum, 0);
-  const {locals, boolean, changeLanguage} = props;
+  const {locals, boolean, changeLanguage, currentItem} = props;
+
+  const isActive = () => {
+    if (Object.keys(currentItem).length) return false;
+    else if (totalItems) return false;
+    return true;
+  }
 
   const changeLanguage1 = () => {
     changeLanguage(boolean)
@@ -37,7 +43,8 @@ const NavBar = (props) => {
         </Link>
         }
 
-        <button className="btn btn-outline-success" onClick={changeLanguage1}>{locals.buttons.language}</button>
+        {isActive() &&
+        <button className="btn btn-outline-success" onClick={changeLanguage1}>{locals.buttons.language}</button>}
       </div>
     </nav>
   )
@@ -45,6 +52,7 @@ const NavBar = (props) => {
 
 const mapStateToProps = state => ({
   itemsInCart: state.inCart,
+  currentItem: state.currentItem,
   locals: state.localization,
   boolean: state.english,
 })
