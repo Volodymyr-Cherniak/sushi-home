@@ -20,7 +20,7 @@ const NavBar = (props) => {
   }
 
   return (
-    <nav className="navbar navbar-expand navbar-light nav mb-3">
+    <nav className="navbar navbar-expand rounded-bottom navbar-light nav mb-3">
       <Link to="/" className="navbar-brand">{locals.navbar.logo}</Link>
 
       <div className="collapse navbar-collapse" id="navbarText">

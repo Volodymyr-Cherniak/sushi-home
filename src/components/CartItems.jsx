@@ -91,7 +91,7 @@ const CartItems = (props) => {
         )
       }
       <div className='d-flex justify-content-between'>
-        <button className='btn btn-outline-warning' onClick={() => clearCart()}>{locals.buttons.clearCart}</button>
+        <button className='btn btn-outline-danger' onClick={() => clearCart()}>{locals.buttons.clearCart}</button>
 
         <button className='btn btn-outline-success' onClick={toggle}>{`${locals.buttons.checkout} ${sumAllItems} `}₴</button>
       </div>
