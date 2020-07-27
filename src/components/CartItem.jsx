@@ -1,10 +1,19 @@
 import React from "react";
 import {Link} from "react-router-dom";
-
+import {get} from 'lodash';
 
 const CartItem = (props) => {
-  const {itemInCart, decrementCount, incrementCount, deleteItem, openItemPage, locals} = props;
-  const {img, name, count, sum, currency, id} = itemInCart;
+  const { decrementCount, incrementCount, deleteItem, openItemPage } = props;
+
+  const itemInCart = get(props, 'itemInCart', {});
+  const locals = get(props, 'locals', {});
+  const img = get(props, 'itemInCart.img', '');
+  const name = get(props, 'itemInCart.name', '');
+  const count = get(props, 'itemInCart.count', 0);
+  const sum = get(props, 'itemInCart.sum', 0);
+  const currency = get(props, 'itemInCart.currency', '');
+  const id = get(props, 'itemInCart.id', 0);
+
 
   return (
     <div className="card mb-3 mt-2">

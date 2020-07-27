@@ -1,10 +1,21 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {connect} from "react-redux";
+import {get} from 'lodash';
 
-const Item = ({currentItem, openItemPage, addItemInCart, inCart, locals}) => {
+const Item = (props) => {
+  const {openItemPage, addItemInCart} = props;
 
-  const {name, img, text, price, weight, id, currency} = currentItem;
+  const currentItem = get(props, 'currentItem', {});
+  const name = get(props, 'currentItem.name', '');
+  const img = get(props, 'currentItem.img', '');
+  const text = get(props, 'currentItem.text', '');
+  const price = get(props, 'currentItem.price', 0);
+  const weight = get(props, 'currentItem.weight', '');
+  const id = get(props, 'currentItem.id', 0);
+  const currency = get(props, 'currentItem.currency', '');
+  const inCart = get(props, 'inCart', []);
+  const locals = get(props, 'locals', {});
 
   const ItemsInCart = inCart.find(el => el.id === id);
 

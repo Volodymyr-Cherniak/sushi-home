@@ -2,25 +2,37 @@ import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
 import {addToCart, clearCurrentItem} from "../redux/actions";
+import {get} from "lodash";
 
 const ItemPage = (props) => {
-  const {currentItem, addToCart, inCart, locals} = props;
-  const {name, img, text, price, weight, currency, id} = currentItem;
+  const { addToCart } = props;
+
+  const currentItem = get(props, 'currentItem', {});
+  const name = get(props, 'currentItem.name', '');
+  const img = get(props, 'currentItem.img', '');
+  const text = get(props, 'currentItem.text', '');
+  const price = get(props, 'currentItem.price', 0);
+  const weight = get(props, 'currentItem.weight', '');
+  const id = get(props, 'currentItem.id', 0);
+  const currency = get(props, 'currentItem.currency', '');
+  const inCart = get(props, 'inCart', []);
+  const locals = get(props, 'locals', {});
+  const inCartBtn = get(locals, 'buttons.inCart', '');
 
   useEffect(() => {
     return () => props.clearCurrentItem();
   }, []);
 
+  if (!img) return <Redirect to='/sushi-home'/>
 
-  if (!currentItem.img) return <Redirect to='/sushi-home'/>
-
-  const ItemsInCart = inCart.find(el => el.id === id);
+  const itemsInCart = inCart.find(el => el.id === id);
 
   const isItemsInCart = () => {
-    if(ItemsInCart) {
-      return locals.buttons.inCart + ' ' + ItemsInCart.count
+    const countItemsInCart = get(itemsInCart, 'count', 0);
+    if(itemsInCart) {
+      return inCartBtn + ' ' + countItemsInCart
     }
-    return locals.buttons.inCart
+    return inCartBtn
   }
 
 
