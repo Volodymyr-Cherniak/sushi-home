@@ -1,7 +1,10 @@
 import React from "react";
 import {connect} from "react-redux";
+import {get} from 'lodash';
 
-const MenuItems = ({locals}) => {
+const MenuItems = (props) => {
+  const locals = get(props, 'locals', {});
+
   return (
     <div className='mt-4 '>
       <h5>{locals.contactPage.textGeneral}</h5>

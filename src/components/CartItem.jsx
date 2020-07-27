@@ -7,12 +7,12 @@ const CartItem = (props) => {
 
   const itemInCart = get(props, 'itemInCart', {});
   const locals = get(props, 'locals', {});
-  const img = get(itemInCart, 'img', '');
-  const name = get(itemInCart, 'name', '');
-  const count = get(itemInCart, 'count', 0);
-  const sum = get(itemInCart, 'sum', 0);
-  const currency = get(itemInCart, 'currency', '');
-  const id = get(itemInCart, 'id', 0);
+  const img = get(props, 'itemInCart.img', '');
+  const name = get(props, 'itemInCart.name', '');
+  const count = get(props, 'itemInCart.count', 0);
+  const sum = get(props, 'itemInCart.sum', 0);
+  const currency = get(props, 'itemInCart.currency', '');
+  const id = get(props, 'itemInCart.id', 0);
 
 
   return (

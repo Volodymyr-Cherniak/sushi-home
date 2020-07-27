@@ -6,10 +6,13 @@ import CartItem from "./CartItem";
 import Checkout from "./Checkout";
 import {address} from "../constans";
 import axios from "axios";
-
+import {get} from 'lodash';
 
 const CartItems = (props) => {
-  const { itemsInCart, locals, incrementCount, decrementCount, deleteItem, clearCart, pageItemById } = props;
+  const {incrementCount, decrementCount, deleteItem, clearCart, pageItemById} = props;
+
+  const itemsInCart = get(props, 'itemsInCart', []);
+  const locals = get(props, 'locals', {});
 
   const [success, setSuccess] = useState(false);
   const [modal, setModal] = useState(false);
@@ -93,7 +96,8 @@ const CartItems = (props) => {
       <div className='d-flex justify-content-between'>
         <button className='btn btn-outline-danger' onClick={() => clearCart()}>{locals.buttons.clearCart}</button>
 
-        <button className='btn btn-outline-success' onClick={toggle}>{`${locals.buttons.checkout} ${sumAllItems} `}₴</button>
+        <button className='btn btn-outline-success' onClick={toggle}>{`${locals.buttons.checkout} ${sumAllItems} `}₴
+        </button>
       </div>
 
       <div>
