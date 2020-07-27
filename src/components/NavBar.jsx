@@ -1,13 +1,20 @@
 import React from "react"
 import {Link} from "react-router-dom";
 import {connect} from "react-redux";
+import {get} from 'lodash';
 import {changeLanguage} from "../redux/actions";
 
 
 const NavBar = (props) => {
-  const totalItems = props.itemsInCart.length;
-  const sumAllItems = props.itemsInCart.reduce((acc, curr) => acc + curr.sum, 0);
-  const {locals, boolean, changeLanguage, currentItem} = props;
+  const {changeLanguage} = props;
+
+  const itemsInCart = get(props, 'itemsInCart', []);
+  const locals = get(props, 'locals', {});
+  const boolean = get(props, 'boolean', true);
+  const currentItem = get(props, 'currentItem', {});
+
+  const totalItems = itemsInCart.length;
+  const sumAllItems = itemsInCart.reduce((acc, curr) => acc + curr.sum, 0);
 
   const isActive = () => {
     if (Object.keys(currentItem).length) return false;
@@ -15,7 +22,7 @@ const NavBar = (props) => {
     return true;
   }
 
-  const changeLanguage1 = () => {
+  const changeLang = () => {
     changeLanguage(boolean)
   }
 
@@ -44,7 +51,7 @@ const NavBar = (props) => {
         }
 
         {isActive() &&
-        <button className="btn btn-outline-success" onClick={changeLanguage1}>{locals.buttons.language}</button>}
+        <button className="btn btn-outline-success" onClick={changeLang}>{locals.buttons.language}</button>}
       </div>
     </nav>
   )
