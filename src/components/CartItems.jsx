@@ -20,10 +20,11 @@ const CartItems = (props) => {
   const sendText = (args) => {
     const cartItems = itemsInCart.map(el => el.name + '(' + el.count + ')');
     const newArgs = {...args, info: '(' + args.info + ')'};
-
     const textMessage = Object.values(newArgs) + ',' + cartItems;
+
     setSuccess(true);
     clearCart();
+
     axios.get(`${address.remote}/.netlify/functions/api/send-text?message=${textMessage}`, {mode: 'no-cors'})
       .then(res => console.log(res.data))
       .catch(err => console.error(err))
@@ -32,6 +33,7 @@ const CartItems = (props) => {
   /////////////email-sender///////////////
   const sendEmail = async (args) => {
     const cartItems = itemsInCart.map(el => ({name: el.name, count: el.count}));
+
     await axios
       .post(`${address.remote}/.netlify/functions/api/send-text-toEmail`, {...args, cartItems})
       .then(res => {
@@ -44,7 +46,6 @@ const CartItems = (props) => {
       .catch(err => console.log(err));
   }
   /////////////////////////////////////
-
 
   const sumAllItems = itemsInCart.reduce((acc, curr) => acc + curr.sum, 0);
 
