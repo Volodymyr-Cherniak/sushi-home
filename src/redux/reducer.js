@@ -2,11 +2,11 @@ import {Generalstate} from "../constans";
 
 
 const initialState = {
-  localization: {...Generalstate.language.eng.localization},
-  sushiItems: [...Generalstate.language.eng.items],
+  localization: {...Generalstate.language.ukr.localization},
+  sushiItems: [...Generalstate.language.ukr.items],
   currentItem: {},
   inCart: [],
-  english: true,
+  english: false,
 };
 
 const sushiItems = (state = initialState, action) => {
