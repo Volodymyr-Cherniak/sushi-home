@@ -36,7 +36,7 @@ const CartItems = (props) => {
   const sendEmail = async (args) => {
     const cartItems = itemsInCart.map(el => ({name: el.name, count: el.count}));
     await axios
-      .post(`${address.remote}/.netlify/functions/api/send-text-toEmail`, {...args, cartItems})
+      .post(`${address.remote}/.netlify/functions/api/email`, {...args, cartItems})
       .then(res => {
         console.log(res)
         if (res) {
@@ -44,7 +44,7 @@ const CartItems = (props) => {
           clearCart();
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => console.log('errr', err));
   }
   /////////////////////////////////////
 

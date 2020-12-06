@@ -10,8 +10,8 @@ const Checkout = (props) => {
   const [info, setInfo] = useState('');
 
   const submitButton = () => {
-    //sendText({name, phone, sushiSticks, info});
-    sendEmail({name, phone, sushiSticks, info});
+    //sendText({name, phone, sushiSticks, info}); //from twilio to whatsapp
+    sendEmail({name, phone, sushiSticks, info}); //from sendgrid to email
     setName('');
     setPhone('');
     setSushiSticks('');
