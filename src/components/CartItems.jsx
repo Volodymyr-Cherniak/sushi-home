@@ -4,9 +4,9 @@ import {Link} from "react-router-dom";
 import {clearCart, decrementCount, deleteItem, incrementCount, pageItemById} from "../redux/actions";
 import CartItem from "./CartItem";
 import Checkout from "./Checkout";
-import {address} from "../constans";
-import axios from "axios";
 import {get} from 'lodash';
+import sendEmail from "../senders/emailer";
+import sendText from "../senders/twilio";
 
 const CartItems = (props) => {
   const {incrementCount, decrementCount, deleteItem, clearCart, pageItemById} = props;
@@ -19,35 +19,15 @@ const CartItems = (props) => {
 
   const toggle = () => setModal(!modal);
 
-  //////////////Twilio//////////////
-  const sendText = (args) => {
-    const cartItems = itemsInCart.map(el => el.name + '(' + el.count + ')');
-    const newArgs = {...args, info: '(' + args.info + ')'};
-
-    const textMessage = Object.values(newArgs) + ',' + cartItems;
-    setSuccess(true);
-    clearCart();
-    axios.get(`${address.remote}/.netlify/functions/api/send-text?message=${textMessage}`, {mode: 'no-cors'})
-      .then(res => console.log(res.data))
-      .catch(err => console.error(err))
+  //twilio
+  const activeText = (args) => {
+    sendText(args, itemsInCart, setSuccess, clearCart)
   }
 
-  /////////////email-sender///////////////
-  const sendEmail = async (args) => {
-    const cartItems = itemsInCart.map(el => ({name: el.name, count: el.count}));
-    await axios
-      .post(`${address.remote}/.netlify/functions/api/email`, {...args, cartItems})
-      .then(res => {
-        console.log(res)
-        if (res) {
-          setSuccess(true);
-          clearCart();
-        }
-      })
-      .catch(err => console.log('errr', err));
+  // email-sender
+  const activeEmail = (args) => {
+    sendEmail(args, itemsInCart, setSuccess, clearCart)
   }
-  /////////////////////////////////////
-
 
   const sumAllItems = itemsInCart.reduce((acc, curr) => acc + curr.sum, 0);
 
@@ -101,7 +81,7 @@ const CartItems = (props) => {
       </div>
 
       <div>
-        <Checkout toggle={toggle} modal={modal} sendText={sendText} sendEmail={sendEmail} locals={locals}/>
+        <Checkout toggle={toggle} modal={modal} sendText={activeText} sendEmail={activeEmail} locals={locals}/>
       </div>
     </div>
   );
