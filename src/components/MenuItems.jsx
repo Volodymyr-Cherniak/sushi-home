@@ -8,6 +8,7 @@ import {get} from 'lodash';
 const MenuItems = (props) => {
   const sushiItems = get(props, 'sushiItems', []);
 
+
   const openItemPage = (id) => {
     props.pageItemById(id)
   }
