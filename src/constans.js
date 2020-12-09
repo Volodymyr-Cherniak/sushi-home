@@ -1,8 +1,3 @@
-export const address = {
-  remote: 'https://sushi-server.netlify.app/.netlify/functions/api',
-  localAddress: 'http://localhost:9000/.netlify/functions/api'
-}
-
 export const Generalstate = {
   language: {
     eng: {

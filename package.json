@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
+    "cross-env": "^7.0.3",
     "gh-pages": "^2.2.0",
     "lodash": "^4.17.19",
     "react": "^16.13.1",
@@ -22,9 +23,10 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
+    "start": "REACT_APP_ENV=production react-scripts start",
+    "dev": "REACT_APP_ENV=development react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
